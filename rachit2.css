@@ -1,21 +1,21 @@
 /* Reset and base styling */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
+
 
 * {
     margin: 0;
     padding: 0;
-    font-family: syne;
     box-sizing: border-box;
 }
 
 body {
-    /* font-family: 'Arial', sans-serif; */
+    font-family: 'Arial', sans-serif;
     /* Default font */
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    background-image: url('tshel.jpg');
+    background-image: url('relation.jpg');
     padding: 50px 20px;
     color: #333;
     position: relative;
@@ -80,7 +80,7 @@ h1 {
     font-size: 2.5em;
     margin-bottom: 30px;
     font-weight: 700;
-    /* font-family: 'Georgia', serif; */
+    font-family: 'Georgia', serif;
     /* Stylish font for the header */
     text-shadow: 1px 1px 0 red,
         -1px -1px 0 red,
@@ -250,16 +250,43 @@ body.blurred {
     /* Darker green on hover */
 }
 
-.result-box {
+#result-box {
+    display: none;
+    background: #e7f3fe;
+    border: 1px solid #b8daff;
+    color: #31708f;
+    padding: 15px;
+    border-radius: 5px;
     margin-top: 20px;
-    padding: 20px;
-    background-color: #f0f0f0;
-    /* Light background for result box */
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    color: #333;
     text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#feedback-section {
+    display: none;
+    margin-top: 20px;
+}
+
+#feedback-section h2 {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 1.5em;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #5cb85c;
+    box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
 }
 
 .comments-section {
@@ -296,4 +323,25 @@ body.blurred {
 .blurred {
     filter: blur(5px);
     transition: filter 0.3s ease;
+}
+
+.next-page-btn {
+    display: block;
+    width: 200px;
+    /* Adjust the width as necessary */
+    padding: 10px;
+    margin: 20px auto;
+    /* Center the button */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.next-page-btn:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
 }
