@@ -1,0 +1,299 @@
+/* Reset and base styling */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: syne;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: 'Arial', sans-serif; */
+    /* Default font */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-image: url('tshel.jpg');
+    padding: 50px 20px;
+    color: #333;
+    position: relative;
+    /* Position relative for the pseudo-element */
+}
+
+/* Background styling */
+body::before {
+    content: "";
+    /* Required for pseudo-element */
+    position: absolute;
+    /* Position it absolutely */
+    top: 0;
+    /* Cover the entire body */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px) invert(1);
+    /* Blur and invert only the background */
+    z-index: -1;
+    /* Place it behind other content */
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    background-color: rgba(54, 69, 79, 0.9)
+        /* Charcoal grey with 90% opacity */
+
+        /* Light grey with 80% opacity */
+    ;
+    /* Dark background for the container */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    /* Darker shadow for depth */
+    animation: fadeIn 0.6s ease;
+    position: relative;
+    /* Ensure container is positioned correctly */
+    z-index: 1;
+    /* Bring the container above the blurred background */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #FFC300;
+    /* Mango yellow color */
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: 700;
+    /* font-family: 'Georgia', serif; */
+    /* Stylish font for the header */
+    text-shadow: 1px 1px 0 red,
+        -1px -1px 0 red,
+        1px -1px 0 red,
+        -1px 1px 0 red;
+    /* Red outline effect */
+}
+
+
+.question {
+    opacity: 0;
+    /* Start hidden */
+    transform: translateX(100px);
+    /* Start from the right */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Transition for opacity and position */
+}
+
+.question.visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateX(0);
+    /* Move to original position */
+}
+
+.question-label {
+    font-size: 1.3em;
+    color: #fff;
+    /* White text for better contrast */
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.options label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.options input[type="radio"] {
+    display: none;
+}
+
+.options input[type="radio"]:checked+label .circle {
+    background-color: #42a5f5;
+    border-color: #42a5f5;
+}
+
+.options input[type="radio"]:checked+label.strong-agree .circle,
+.options input[type="radio"]:checked+label.agree .circle {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+}
+
+.options input[type="radio"]:checked+label.neutral .circle {
+    background-color: white;
+    border-color: #66bb6a;
+}
+
+.options input[type="radio"]:checked+label.disagree .circle,
+.options input[type="radio"]:checked+label.strong-disagree .circle {
+    background-color: #ef5350;
+    border-color: #ef5350;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background-color: transparent;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.options label.strong-agree {
+    color: #66bb6a;
+}
+
+.options label.agree {
+    color: #4CAF50;
+}
+
+.options label.neutral {
+    color: white;
+    /* Change color to white */
+}
+
+.options label.disagree {
+    color: #ff7043;
+}
+
+.options label.strong-disagree {
+    color: #e57373;
+}
+
+.submit-container {
+    text-align: center;
+    margin-top: 20px;
+    /* Add some space above the button */
+}
+
+.score-overlay {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    /* Ensure it's above other content */
+}
+
+.result-box {
+    padding: 20px;
+    background-color: #f0f0f0;
+    /* Light background for result box */
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 24px;
+    /* Larger font size for score display */
+    color: #333;
+    text-align: center;
+}
+
+body.blurred {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+    /* Smooth transition for blur effect */
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    /* Green background */
+    color: white;
+    /* White text */
+    padding: 10px 20px;
+    /* Padding for the button */
+    border: none;
+    /* No border */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 16px;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s;
+    /* Smooth background color transition */
+    width: 30%;
+    /* Full width */
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    /* Light background for result box */
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+.comments-section {
+    margin-top: 30px;
+}
+
+.comments-label {
+    display: block;
+    font-size: 1.2em;
+    color: #fff;
+    /* White text for comments label */
+    margin-bottom: 10px;
+}
+
+.comments-section textarea {
+    width: 100%;
+    height: 100px;
+    /* Set a fixed height for the textarea */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    resize: none;
+    /* Disable resizing if desired */
+}
+
+.comments-section textarea:focus {
+    border-color: #1e88e5;
+    outline: none;
+}
+
+/* Blurred background effect */
+.blurred {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}

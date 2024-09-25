@@ -1,0 +1,142 @@
+body {
+    font-family: 'Syne', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 25%, #ffafbd 50%, #ffc3a0 75%, #ff677d 100%);
+    position: relative;
+}
+
+header {
+    background-color: rgba(52, 152, 219, 0.8);
+    /* Blue background with transparency */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.survey {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.question {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgba(236, 240, 241, 0.8);
+    /* Light gray background for all questions */
+    color: #2c3e50;
+    transition: transform 0.2s;
+}
+
+.question:hover {
+    transform: scale(1.0);
+}
+
+.question label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.radio-group label {
+    margin-right: 20px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+    outline: none;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"]:checked {
+    border-color: transparent;
+    background-color: #3498db;
+}
+
+/* Colors for each option */
+.radio-1 input[type="radio"]:checked {
+    background-color: #4CAF50;
+    /* Green */
+}
+
+/* More radio color classes can be added here for other questions... */
+
+.submit-btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit-btn input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn input[type="submit"]:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+textarea {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    margin-top: 10px;
+    background-color: rgba(236, 240, 241, 0.8);
+    /* Gray background for textarea */
+    font-size: 1.1em;
+    /* Increased font size */
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* New style for additional thoughts label */
+.additional-thoughts-label {
+    font-weight: bold;
+    font-size: 1.2em;
+    /* Increased font size */
+    color: #2c3e50;
+    /* Darker color for better contrast */
+    margin-bottom: 10px;
+    /* Spacing below the label */
+}
