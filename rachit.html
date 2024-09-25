@@ -359,15 +359,16 @@
         <br><br><br>
         <button class="submit-btn">Submit</button>
 
-        <!-- Result Box - Position it below the Submit Button -->
+        <!-- Result Box -->
         <div id="result-box" style="display: none; margin-top: 20px;"></div>
 
         <div id="feedback-section" style="display: none;">
             <h2>Feedback</h2>
             <textarea placeholder="Leave your comments here..."></textarea>
         </div>
+        <button class="next-page-btn" style="display: none;">Next</button>
     </div>
-    <script>
+    <script src="script.js">
         // Function to check if an element is in the viewport
         function isElementInViewport(el) {
             const rect = el.getBoundingClientRect();
